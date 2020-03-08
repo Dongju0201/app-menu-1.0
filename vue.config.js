@@ -1,0 +1,20 @@
+const path = require("path")
+
+function resolve(dir) {
+  return path.join(__dirname,dir)
+}
+
+module.exports={
+  devServer:{
+    port:3000,
+    open:true
+  },
+  configureWebpack:{
+  resolve:{
+    alias:{
+      "components":resolve("src/components"),
+      "pages":resolve("src/pages")
+    }
+  }
+}
+}
